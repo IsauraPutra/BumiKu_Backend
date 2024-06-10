@@ -3,24 +3,24 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "Isaura",
+    "name": "putera",
     "email": "admin@gmail.com",
     "password": "123456",
     "confPassword": "123456",
     "role": "admin"
 }
 
-###
+### Dapatkan semua pengguna
 // get All Users
 GET http://localhost:5000/users
 
-###
+### Dapatkan satu pengguna
 // GET Single User
-GET http://localhost:5000/users/4b0024ec-52e3-4fdb-8de9-688c961a3d72
+GET http://localhost:5000/users/0972c084-87f6-4151-a1db-e7eefe5a3cf0
 
-### 
+### Perbarui pengguna
 // Update A User
-PATCH http://localhost:5000/users/4b0024ec-52e3-4fdb-8de9-688c961a3d72
+PATCH http://localhost:5000/users/0972c084-87f6-4151-a1db-e7eefe5a3cf0
 Content-Type: application/json
 
 {
@@ -31,16 +31,17 @@ Content-Type: application/json
     "role": "user"
 }
 
-###
+### Hapus Pengguna
 // Delete A User
-DELETE  http://localhost:5000/users/4b0024ec-52e3-4fdb-8de9-688c961a3d72
+DELETE  http://localhost:5000/users/0972c084-87f6-4151-a1db-e7eefe5a3cf0
 
-###
+### Masuk sebagai pengguna
 // login User
 POST http://localhost:5000/login
 Content-Type: application/json
 
 {
+    "name": "putera",
     "email": "admin@gmail.com",
     "password": "123456"
 }
@@ -50,37 +51,37 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "john@gmail.com",
+    "email": "isauraputra@gmail.com",
     "password": "123456"
 }
 
-###
+### Dapatkan info pengguna yang saat ini masuk
 GET  http://localhost:5000/me
 
-###
+### Keluar dari akun pengguna yang saat ini masuk
 // logout
 DELETE  http://localhost:5000/logout
 
-###
+### Dapatkan SEMUA PRODUK
 // GET ALL PRODUCTS
 GET http://localhost:5000/products
 
-###
+### Dapatkan SATU PRODUK
 // GET SINGLE PRODUCT
 GET http://localhost:5000/products/dbdaee68-b7e8-4046-b54b-90ca1f2adcdc
 
-###
+### POST DATA PRODUK
 // POST DATA PRODUCT
 POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "Product 8",
-    "price": 6546
+    "name": "Product 6",
+    "price": 9969
 }
 
-###
-// POST DATA PRODUCT
+### Perbarui DATA PRODUK
+// UPDATE DATA PRODUCT
 PATCH  http://localhost:5000/products/31c9381e-672c-41be-82dd-4d1ef2b27ba8
 Content-Type: application/json
 
@@ -89,5 +90,36 @@ Content-Type: application/json
     "price": 989
 }
 
-###
+### Hapus PRODUK
 DELETE  http://localhost:5000/products/dbdaee68-b7e8-4046-b54b-90ca1f2adcdc
+
+###
+// Image url
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name": "Product 6",
+  "price": 9969,
+  "imageUrl": "http://example.com/image.jpg"
+}
+
+### Membuat Produk dengan Payment Status
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name": "celerates12345",
+    "price": 450000,
+    "imageUrl": "http://example.com/image.jpg",
+    "userId": 6,
+    "payment_status": "menunggu konfirmasi"
+}
+
+### Memperbarui Payment Status Produk
+PATCH http://localhost:5000/products/7c8f0309-d89b-4c07-a4fc-af0d34898c47
+Content-Type: application/json
+
+{
+    "payment_status": "selesai"
+}

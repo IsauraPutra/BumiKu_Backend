@@ -22,20 +22,15 @@ const Users = db.define(
         len: [3, 100],
       },
     },
-    role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: 'user', // Atur nilai default menjadi 'user'
-      validate: {
-        notEmpty: true,
-      },
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
         isEmail: true,
+      },
+      unique: {
+        msg: "Email already registered",
       },
     },
     password: {
@@ -44,6 +39,11 @@ const Users = db.define(
       validate: {
         notEmpty: true,
       },
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "user",
     },
   },
   {

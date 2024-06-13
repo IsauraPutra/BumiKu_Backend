@@ -3,8 +3,8 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "putera",
-    "email": "admin@gmail.com",
+    "name": "amelagustina",
+    "email": "amelagus123@gmail.com",
     "password": "123456",
     "confPassword": "123456",
     "role": "admin"
@@ -16,24 +16,24 @@ GET http://localhost:5000/users
 
 ### Dapatkan satu pengguna
 // GET Single User
-GET http://localhost:5000/users/0972c084-87f6-4151-a1db-e7eefe5a3cf0
+GET http://localhost:5000/users/a05ce404-6618-4438-a367-b9ba22e14975
 
 ### Perbarui pengguna
 // Update A User
-PATCH http://localhost:5000/users/0972c084-87f6-4151-a1db-e7eefe5a3cf0
+PATCH http://localhost:5000/users/48cee5c8-1f10-4949-b4f4-f27279e8a54f
 Content-Type: application/json
 
 {
-    "name": "John Updated",
-    "email": "john@gmail.com",
+    "name": "Amel Updated",
+    "email": "amelagus@gmail.com",
     "password": "",
     "confPassword": "",
-    "role": "user"
+    "role": "admin"
 }
 
 ### Hapus Pengguna
 // Delete A User
-DELETE  http://localhost:5000/users/0972c084-87f6-4151-a1db-e7eefe5a3cf0
+DELETE  http://localhost:5000/users/22bc1ce1-8a8f-4a25-9bed-341db5a66fb9
 
 ### Masuk sebagai pengguna
 // login User
@@ -41,8 +41,8 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "name": "putera",
-    "email": "admin@gmail.com",
+    "name": "amelagustina",
+    "email": "amelagus123@gmail.com",
     "password": "123456"
 }
 
@@ -51,7 +51,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "isauraputra@gmail.com",
+    "email": "admin@gmail.com",
     "password": "123456"
 }
 
@@ -68,7 +68,7 @@ GET http://localhost:5000/products
 
 ### Dapatkan SATU PRODUK
 // GET SINGLE PRODUCT
-GET http://localhost:5000/products/dbdaee68-b7e8-4046-b54b-90ca1f2adcdc
+GET http://localhost:5000/products/faaad4f0-925a-491e-bd3f-3e8d36c5983
 
 ### POST DATA PRODUK
 // POST DATA PRODUCT
@@ -76,18 +76,18 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "Product 6",
-    "price": 9969
+    "name": "isauraputra",
+    "price": 95000
 }
 
 ### Perbarui DATA PRODUK
 // UPDATE DATA PRODUCT
-PATCH  http://localhost:5000/products/31c9381e-672c-41be-82dd-4d1ef2b27ba8
+PATCH  http://localhost:5000/products/2bf45a6c-3d32-4eb2-a544-67e15b78bb69
 Content-Type: application/json
 
 {
-    "name": "Product Updated",
-    "price": 989
+    "name": "isaura Updated",
+    "price": 56000
 }
 
 ### Hapus PRODUK
@@ -99,8 +99,8 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-  "name": "Product 6",
-  "price": 9969,
+  "name": "Isaura updated",
+  "price": 75000,
   "imageUrl": "http://example.com/image.jpg"
 }
 
@@ -109,7 +109,7 @@ POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "celerates12345",
+    "name": "celer",
     "price": 450000,
     "imageUrl": "http://example.com/image.jpg",
     "userId": 6,
@@ -117,7 +117,7 @@ Content-Type: application/json
 }
 
 ### Memperbarui Payment Status Produk
-PATCH http://localhost:5000/products/7c8f0309-d89b-4c07-a4fc-af0d34898c47
+PATCH http://localhost:5000/products/8da17575-8003-483c-8e55-a4f53073b112
 Content-Type: application/json
 
 {

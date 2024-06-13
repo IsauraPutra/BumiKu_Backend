@@ -34,6 +34,9 @@ export const createUser = async (req, res) => {
   const hashPassword = await argon2.hash(password);
 
   try {
+    const userExists = await User.findOne({ where: { email } });
+    if (userExists) return res.status(400).json({ msg: "Email sudah terdaftar" });
+
     await User.create({
       name: name,
       email: email,
